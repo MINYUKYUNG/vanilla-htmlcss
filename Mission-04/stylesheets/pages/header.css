@@ -1,0 +1,479 @@
+/* 헤더 */
+
+/* body 시작 */
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+ul, ol, li {
+  list-style: none;
+}
+
+a {
+  display: inline-block;
+}
+
+button,
+input {
+  border: none;
+  outline: none;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+/* .screenreader {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+
+  border: 0;
+  padding: 0;
+
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+} */
+/* body 끝 */
+
+
+/* 로그인 바 시작 */
+.loginbar-outer {
+  display: flex;
+  justify-content: center;
+  height: 34px;
+  align-items: center;
+  background-color: var(--color-gray-100);
+}
+
+.loginbar-inner {
+  width: 1020px;
+  height: 24px;
+  display: flex;
+  line-height: 24px;
+
+  color: var(--color-black);
+  font-size: 12px;
+  font-weight: normal;
+}
+
+.loginbar-link:nth-child(1) {
+  order: 3;
+  margin-left: auto;
+}
+.loginbar-link:nth-child(2) {
+  order: 4;
+  margin: 0 8px;
+}
+.loginbar-link:nth-child(3) {
+  order: 5;
+  margin-right: 8px;
+}
+.loginbar-link:nth-child(4) {
+  order: 1;
+  margin: 0 8px;
+}
+.loginbar-link:nth-child(5) {
+  order: 2;
+}
+/* 로그인 바 끝 */
+
+
+/* 메인바 시작 */
+.mainbar-outer {
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid var(--color-gray-100);
+}
+
+.mainbar-inner {
+  display: grid;
+  width: 1020px;
+
+  grid-template-columns: 110px auto 540px 81px 45px;
+  grid-template-rows: 29px auto 29px;
+}
+
+/* 카테고리 박스(파란색) */
+.button--category {
+  grid-column-start: 1;
+	grid-column-end: 2;
+	grid-row-start: 1;
+	grid-row-end: 4;
+
+  position: relative;
+  width: 110px;
+  height: 116px;
+  background-color: var(--color-blue-600);
+  background-image: url("../../assets/icon/hamburger.svg");
+  background-repeat: no-repeat;
+  background-position: 40px 30px;
+
+  color: var(--color-white);
+  font-size: 12px;
+  font-weight: normal;
+
+  display: flex;
+  justify-content: center;
+}
+
+.button--category > span {
+  position: absolute;
+  top: 72px;
+}
+
+/* 쿠팡 로고 */
+.logo {
+  grid-column-start: 2;
+	grid-column-end: 3;
+	grid-row-start: 2;
+	grid-row-end: 3;
+
+  background-image: url(../../assets/logo/logo.svg);
+  background-repeat: no-repeat;
+  background-size: 176px 40px;
+
+  margin: 5px 0 0 40px;
+  align-items: start;
+  justify-items: start;
+  
+  width: 176px;
+  height: 40px;
+
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0);
+}
+
+.logo > a {
+  width: 176px;
+  height: 40px;
+}
+
+/* 검색영역 (form) */
+.search-box {
+  grid-column-start: 3;
+	grid-column-end: 4;
+	grid-row-start: 2;
+	grid-row-end: 3;
+
+  position: relative;
+  /* margin-right: 22px; */
+  margin-top: 5px;
+  align-items: start;
+
+  width: 518px;
+  height: 42px;
+
+  border: 1px solid var(--color-blue-600);
+}
+
+/* 검색 분류영역 */
+select {
+  -webkit-appearance:none;
+  -moz-appearance:none;
+  appearance:none;
+}
+
+.search-category {
+  position: absolute;
+  color: var(--color-gray-700);
+  font-size: 12px;
+  font-weight: normal;
+  text-indent: 12px;
+
+  width: 135px;
+  height: 40px;
+  border: 0;
+  border-right: 1px solid var(--color-gray-100);
+}
+
+.dropdown-image {
+  position: absolute;
+  pointer-events: none;
+  left: 94px;
+}
+
+/* 검색어 입력영역 */
+.search-input {
+  position: absolute;
+  width: 301px;
+  height: 40px;
+  font-size: 12px;
+  font-weight: normal;
+  text-indent: 10px;
+
+  left: 135px;
+}
+
+/* 마이크 버튼(음성검색) */
+.search-mic {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background-image: url(../../assets/icon/mic.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  right: 40px;
+}
+
+/* 돋보기 버튼(키워드검색) */
+.search-keyword {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background-image: url(../../assets/icon/search.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  right: 0;
+}
+
+/* 로켓배송 ~ 여행티켓 (9개) */
+.events {
+  display: inline-block;
+  width: 755px;
+  height: 26px;
+
+  margin-bottom: 6px;
+  margin-left: 36px;
+  overflow: hidden;
+
+  grid-column-start: 2;
+	grid-column-end: 6;
+	grid-row-start: 3;
+	grid-row-end: 4;
+}
+
+.events > li {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: normal;
+  color: var(--color-black);
+
+  margin: 0 14px;
+}
+.events > li:nth-child(7) {
+  margin: 0 7px;
+}
+.events > li:nth-child(8) {
+  margin: 0 20px;
+}
+
+.events > li > img {
+  vertical-align: middle;
+  margin-bottom: 1px;
+}
+
+
+/* 마이쿠팡 */
+.myCoupang {
+	grid-row-start: 2;
+	grid-row-end: 3;
+
+  width: 90px;
+  font-size: 12px;
+  font-weight: normal;
+  color: var(--color-black);
+
+  position: relative;
+}
+
+/* 마이쿠팡 button */
+.myCoupang > button {
+  width: 90px;
+  height: 58px;
+  position: relative;
+
+  background-image: url(../../assets/icon/my-coupang.svg);
+  background-repeat: no-repeat;
+  background-position: center 5px;
+}
+
+.myCoupang > button > span {
+  position: absolute;
+  left: 22px;
+  bottom: 4px;
+  font-size: 12px;
+  font-weight: normal;
+  color: var(--color-black);
+
+  width: 45px;
+}
+
+/* 마이쿠팡 ul */
+.myCoupang > div {
+  position: absolute;
+}
+
+.myCoupang > div > ul {
+  display: none;
+
+  position: relative;
+  margin-top: 7px;
+  width: 90px;
+  height: 130px;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray-300);
+}
+
+/* 마이쿠팡 ul삼각형 테두리*/
+.myCoupang > div > ul::before {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 4px 7px;
+  display: block;
+  top: -7px;
+  left: 41px;
+
+  border-color: var(--color-gray-300) transparent;
+}
+/* 마이쿠팡 ul삼각형 안 */
+.myCoupang > div > ul::after {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 4px 7px;
+  display: block;
+  top: -5px;
+  left: 41px;
+
+  border-color: var(--color-white) transparent;
+}
+
+.myCoupang > div > ul > li {
+  margin-left: 20px;
+  height: 14px;
+  cursor: default;
+}
+
+.myCoupang > div > ul > li:nth-child(1) {
+  padding-top: 24px;
+  height: 38px;
+}
+.myCoupang > div > ul > li:nth-child(2) {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.myCoupang.is--active > div > ul {
+  display: block;
+}
+
+/* 장바구니 */
+.cart {
+  grid-row-start: 2;
+	grid-row-end: 3;
+
+  position: relative;
+  width: 45px;
+}
+
+/* 장바구니 버튼 */
+.cart > button {
+  width: 45px;
+  height: 58px;
+  position: relative;
+
+  background-image: url(../../assets/icon/cart.svg);
+  background-repeat: no-repeat;
+  background-size: 28px 28px;
+  background-position: center 6px;
+}
+
+.cart > button > span {
+  position: absolute;
+  font-size: 12px;
+  font-weight: normal;
+  color: var(--color-black);
+  left: 0;
+  bottom: 4px;
+
+  width: 45px;
+}
+
+/* 장바구니 0 */
+.cart > span {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  background-color: var(--color-blue-600);
+  border-radius: 50%;
+  
+  color: var(--color-white);
+  font-size: 12px;
+  font-weight: normal;
+  text-align: center;
+  line-height: 18px;
+  
+  right: 2.5px;
+}
+
+/* 장바구니 메시지(비어있음) */
+.cart > div {
+  display: none;
+
+  position: absolute;
+  right: 6px;
+
+  width: 288px;
+  height: 99px;
+
+  font-size: 14px;
+  font-weight: normal;
+  color: var(--color-black);
+
+  cursor: default;
+}
+
+.cart > div > p {
+  width: 288px;
+  height: 92px;
+  margin-top: 7px;
+
+  position: relative;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray-300);
+
+  text-align: center;
+  line-height: 92px;
+}
+
+/* 장바구니 메시지(비어있음) 삼각형 테두리*/
+.cart > div > p::before {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 4px 7px;
+  display: block;
+  top: -7px;
+  right: 12px;
+
+  border-color: var(--color-gray-300) transparent;
+}
+/* 장바구니 메시지(비어있음) 삼각형 안 */
+.cart > div > p::after {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 4px 7px;
+  display: block;
+  top: -5px;
+  right: 12px;
+
+  border-color: var(--color-white) transparent;
+}
+
+.cart.cart--empty > div {
+  display: block;
+}

@@ -1,0 +1,386 @@
+/* 카테고리별 추천 광고상품 */
+
+/* !!! figma에 있는 도안의 width가 박스마다 1020px과 1022px으로 다르게 설정되어 있습니다. 오른쪽 카드이미지 width를 (간격 16px 포함해서)더해보니 526px이 아닌 528px이었습니다. 이때문에 figma에서 박스마다 설정이 다르게 되어있던것 같습니다. 이러한 이유로 mission3 과제는 width를 1022px로 설정하였습니다. */
+
+/* body영역 시작 */
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  display: inline-block;
+}
+
+h1 {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0; 
+}
+
+ul, ol, li {
+  list-style: none;
+}
+
+.screenreader {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+
+  border: 0;
+  padding: 0;
+
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+img {
+  display: block;
+}
+/* body영역 끝 */
+
+
+/* header영역 시작 */
+.header {
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+  margin-bottom: 48px;
+}
+
+.header-box {
+  width: 1022px;
+  height: 56px;
+}
+
+.header-logo {
+  width: 246px;
+  height: 56px;
+  margin: 0;
+}
+/* header영역 끝 */
+
+
+/* 제목 + 본문 시작 */
+.mission3 {
+  margin-bottom: 434px;
+}
+
+/* 타이틀영역 시작 */
+.title-outer {
+  display: flex;
+  justify-content: center;
+}
+
+.title-inner {
+  width: 1022px;
+  height: 46px;
+  margin-bottom: 24px;
+}
+
+.title-1 {
+  color: var(--color-black);
+  font-size: 16px;
+  font-weight: normal;
+}
+.title-2 {
+  color: var(--color-black);
+  font-size: 24px;
+  font-weight: bold;
+}
+.blue {
+  color: var(  --color-blue-600);
+  margin-left: 10px;
+}
+/* 타이틀 영역 끝 */
+
+/* 본문 시작 */
+.mission3-section-outer {
+  display: flex;
+  justify-content: center;
+}
+
+.mission3-section-inner {
+  width: 1022px;
+}
+
+/* article */
+.article-part-1 {
+  width: 1022px;
+  height: 634px;
+  display: flex;
+
+  border-top: 1.17px solid var(--color-brown-300);
+  border-bottom: 1.17px solid var(--color-brown-300);
+  margin-bottom: 24px;
+}
+.article-part-2 {
+  width: 1022px;
+  height: 634px;
+  display: flex;
+
+  border-top: 1.17px solid var(--color-green-700);
+  border-bottom: 1.17px solid var(--color-green-700);
+}
+
+/* article-왼쪽 */
+.left-1,
+.left-2 {
+  position: relative;
+  width: 174px;
+}
+
+.category-name {
+  position: absolute;
+  font-size: 24px;
+  font-weight: normal;
+  color: var(--color-brown-300);
+
+  width: 89px;
+  height: 28px;
+  top: 48px;
+  left: 24px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.category-name.two {
+  color: var(--color-green-700);
+}
+
+.shortcut {
+  position: absolute;
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--color-gray-700);
+
+  background-image: url("../../assets/icon/angle-right-default.svg");
+  background-repeat: no-repeat;
+  background-position: right;
+
+  width: 62px;
+  height: 17px;
+  top: 84px;
+  left: 24px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.shortcut .shortcut-a {
+  width: 62px;
+  height: 17px;
+}
+
+.hot-keyword {
+  position: absolute;
+  font-size: 18px;
+  font-weight: normal;
+  color: var(--color-black);
+
+  width: 92px;
+  height: 21px;
+  top: 349px;
+  left: 24px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hashtag-box {
+  position: absolute;
+  font-size: 12px;
+  font-weight: 300;
+  color: var(--color-brown-300);
+
+  width: 117px;
+  height: 216px;
+  top: 390px;
+  left: 24px;
+}
+.hashtag-box.two {
+  color: var(--color-green-700);
+}
+
+.hashtag {
+  margin: 0 0 12px 0;
+  border: 1px solid var(--color-gray-400);
+  height: 26px;
+
+  display: inline-block;
+}
+.hashtag.end {
+  margin-bottom: 0;
+}
+
+.hashtag-a {
+  padding: 5px 9px;
+}
+
+/* article-중간 (슬라이드 이미지) */
+.image-1,
+.image-2 {
+  width: 320px;
+  position: relative;
+}
+
+.big-image-box-outer {
+  width: 320px;
+  overflow: hidden;
+}
+
+.big-image-box-inner {
+  width: 640px;
+  display: flex;
+}
+
+.desc-box-outer {
+  position: absolute;
+  background-color: var(--color-brown-300);
+  color: var(--color-white);
+
+  width: 260px;
+  height: 90px;
+  top: 483px;
+  left: 30px;
+}
+.desc-box-outer.two {
+  background-color: var(--color-green-700);
+}
+
+.desc-box-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+}
+
+.desc-1 {
+  position: absolute;
+  font-size: 18px;
+  font-weight: bold;
+  height: 24px;
+  top: 19px;
+}
+
+.desc-2 {
+  position: absolute;
+  font-size: 14px;
+  font-weight: normal;
+  height: 19px;
+  bottom: 20px;
+}
+
+.button-box {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+
+  width: 32px;
+  height: 12px;
+  top: 597px;
+  left: 144px;
+}
+
+.button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.button.left {
+  background-color: var(--color-gray-700);
+}
+
+.button.right {
+  background-color: var(--color-gray-600);
+}
+
+/* article-오른쪽 */
+.right-1,
+.right-2 {
+  position: relative;
+  height: 631.688px;
+  width: 528px;
+}
+
+.right-1::before,
+.right-2::before {
+  content: "";
+  position: absolute;
+  width: 528px;
+  height: 0.5px;
+  background-color: var(--color-gray-600); 
+
+  top: 50%;
+}
+
+/* ul */
+.product-card-box {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* li */
+.card {
+  width: 160px;
+  height: 300px;
+  font-size: 14px;
+  font-weight: normal;
+  color: var(--color-black);
+
+  margin: 8px 0 8px 16px;
+}
+
+/* li의 a */
+.card-a {
+  width: 100%;
+  height: 100%;
+
+  position: relative;
+}
+
+/* bottom 영역 */
+.bottom {
+  position: absolute;
+  width: 152px;
+  top: 172px;
+  left: 4px;
+}
+
+.product-name {
+  margin-bottom: 12px;
+}
+
+.money-won {
+  display: flex;
+  align-items: center;
+  height: 27px;
+}
+
+.money {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.red {
+  color: var(--color-red-500);
+  margin-bottom: 4px;
+}
+
+.rocket-badge {
+  margin-left: 6px;
+}
+
+/* 본문 끝 */
+/* 제목 + 본문 끝 */

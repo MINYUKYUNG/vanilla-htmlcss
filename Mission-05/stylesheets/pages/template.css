@@ -1,0 +1,398 @@
+/* ---- 전체적용 START ---- */
+/* .screenreader {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+
+  border: 0;
+  padding: 0;
+
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+} */
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+ul, ol, li {
+  list-style: none;
+}
+
+a {
+  display: inline-block;
+}
+
+button,
+input {
+  border: none;
+  outline: none;
+}
+/* ---- 전체적용 END ---- */
+
+
+/* ---------------------------------------------- */
+/* 헤더                                            */
+.header {
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid var(--color-gray-100);
+}
+
+.header__inner {
+  margin: 0;
+  padding: 0;
+  width: 1020px;
+  height: 116px;
+}
+
+/* ---- 파란색 카테고리 버튼 START ---- */
+.button--category {
+  width: 110px;
+  height: 116px;
+  background-color: var(--color-blue-600);
+  color: var(--color-white);
+  font-size: 12px;
+  font-weight: normal;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.button--category > span {
+  margin-top: 12px;
+}
+
+.button--category:focus-visible {
+  box-shadow: 0 0 0 3px var(--color-red-500) inset;
+  border-radius: 10px;
+}
+/* ---- 파란색 카테고리 버튼 END ---- */
+/* ---------------------------------------------- */
+
+
+/* ---------------------------------------------- */
+/* 내비게이션                                        */
+
+/* ---- nav 박스 ---- */
+.navigation {
+  visibility: hidden;
+  /* display: none; */
+
+  position: absolute;
+  top: 117px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 12px;
+  font-weight: normal;
+
+  width: 1020px;
+  height: 520px;
+}
+
+.new {
+  margin-left: 4px;
+}
+
+/* ---- li 요소 ---- */
+.box {
+  margin: 0 5px;
+  width: 170px;
+  height: 30px;
+  line-height: 30px;
+}
+
+/* ---- a 요소 ---- */
+.box-a {
+  display: flex;
+  width: 170px;
+  text-indent: 20px;
+  cursor: pointer;
+}
+
+/* ---- icon font 요소 ---- */
+.box-a > span {
+  text-indent: 20px;
+}
+
+span::before {
+  line-height: 30px;
+}
+
+/* ---- 1depth 리스트 ---- */
+.navigation__list > li > a {
+  text-indent: 4px;
+}
+
+/* ---- nav안 1depth를 감싸주는 박스 ---- */
+.navigation__inner {
+  width: 540px;
+  height: 500px;
+}
+
+/* ---- 1depth START ---- */
+.navigation__list {
+  padding: 10px 0;
+  width: 180px;
+  height: 500px;
+  background-color: var(--color-white); 
+  
+  box-shadow: 0 3px 4px 0 var(--color-gray-600);
+
+  position: relative;
+}
+/* ---- 1depth END ---- */
+
+/* ---- 2depth START ---- */
+.depth-2 {
+  visibility: hidden;
+  /* display: none; */
+
+  position: absolute;
+  top: 0;
+  left: 178px;  
+  
+  padding: 10px 0;
+  width: 180px; 
+  height: 500px;
+  background-color: var(--color-white);
+  
+  box-shadow: 1px 3px 4px 0 var(--color-gray-600);
+}
+
+.depth-2::before,
+.depth-3::before {
+  content: '';
+  height: 500px;
+  width: 1px;
+  
+  top: 0;
+  left: 0;
+
+  background-color: var(--color-gray-100);
+
+  position: absolute;
+}
+/* ---- 2depth END ---- */
+
+/* ---- 3depth START---- */
+.depth-3 {
+  visibility: hidden;
+
+  position: absolute;
+  top: 0;
+  left: 180px;
+  
+  padding: 10px 0;
+  width: 180px; 
+  height: 500px;
+  background-color: var(--color-white);
+  
+  box-shadow: 1px 3px 4px 0 var(--color-gray-600);
+}
+/* ---- 3depth END---- */
+
+/* ---- [JS] is--active START ---- */
+.is--active {
+  visibility: visible;
+  /* display: block; */
+}
+
+.box-a.is--active {
+  color: var(--color-blue-600);
+  font-weight: bold;
+  background-image: url(../../assets/icon/more-right-active.svg);
+  background-repeat: no-repeat;
+  background-position-y: center;
+  background-position-x: 151.5px;
+}
+
+.depth-1 > li > a:focus,
+.depth-1 > li > a:focus-visible,
+.depth-2 > li > a:focus,
+.depth-2 > li > a:focus-visible {
+  color: var(--color-blue-600);
+  font-weight: bold;
+  background-image: url(../../assets/icon/more-right-active.svg);
+  background-repeat: no-repeat;
+  background-position-y: center;
+  background-position-x: 151.5px;
+}
+
+.depth-3 > li > a:hover,
+.depth-3 > li > a:focus,
+.depth-3 > li > a:focus-visible {
+  color: var(--color-blue-600);
+  font-weight: bold;
+}
+
+/* ---- [JS] is--active END ---- */
+/* ---------------------------------------------- */
+
+
+/* ---------------------------------------------- */
+/* 메인 콘텐츠                                       */
+/* ---------------------------------------------- */
+/* 메인 콘텐츠 영역의 최소 높이 설정 */
+.main {
+  min-height: 52rem;
+}
+/* ---------------------------------------------- */
+
+/* ---------------------------------------------- */
+/* 푸터                                            */
+.footer {
+  margin: 0;
+  padding: 0;
+  height: 349px;
+  font-size: 12px;
+  font-weight: normal;
+  color: var(--color-gray-800);
+}
+
+.pick-bold {
+  font-weight: bold;
+}
+
+/* ---- gray START ---- */
+.footer-gray-outer {
+  height: 40px;
+  background-color: var(--color-gray-200);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-gray-inner {
+  width: 1006px;
+  height: 35px;
+  margin: 3px 0 2px;
+  line-height: 35px;
+  display: flex;
+  justify-content: space-evenly;
+}
+/* ---- gray END ---- */
+
+/* ---- white START ---- */
+.footer-white-outer {
+  height: 207px;
+  /* 폰트사이즈 figma 16px에서 -> 14px로 임의변경. 피그마 폰트크기와, 실제 적용하였을 때 폰트의 width 및 height가 상이함. 몇몇의 경우 박스자체크기를 넘어서서 임의로 변경. */
+  font-size: 14px; 
+  background-color: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-white-inner {
+  width: 1200px;
+  height: 143px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.logo {
+  display: inline-block;
+  margin: 0;
+  width: 176px;
+  height: 40px;
+  color: rgba(0, 0, 0, 0);
+  background-image: url(../../assets/logo/logo-mono.svg);
+  background-repeat: no-repeat;
+  background-size: 176px 40px;
+}
+
+/* ---- infomation-1 START ---- */
+.infomation-1 {
+  width: 260px;
+  height: 143px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+/* ---- infomation-1 END ---- */
+
+/* ---- infomation-2 START ---- */
+.infomation-2 {
+  width: 293px;
+  height: 143px;
+}
+
+.cut-1 {
+  margin-right: -4px;
+}
+
+.cut-2 {
+  display: inline-block;
+  width: 177px;
+  padding-left: 15px;
+  border-left: 1px solid var(--color-gray-800);
+  margin-left: 13px;
+}
+
+.numbers {
+  font-size: 48px;
+  margin: 8px 0 12px;
+}
+
+.infomation-2 > p {
+  margin-bottom: 8px;
+}
+/* ---- infomation-2 END ---- */
+
+/* ---- infomation-3 START ---- */
+.infomation-3 {
+  width: 282px;
+  height: 84px;
+}
+
+.infomation-3 > p:nth-of-type(1) {
+  margin-bottom: 8px;
+}
+/* ---- infomation-3 END ---- */
+/* ---- white END ---- */
+
+/* ---- black START ---- */
+.footer-black-outer {
+  height: 102px;
+  font-weight: lighter;
+  color: var(--color-gray-200);
+  background-color: var(--color-gray-900);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-black-inner {
+  width: 1020px;
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.warning {
+  width: 848px;
+  height: 70px;
+}
+
+.link-box {
+  width: auto;
+  height: 34px;
+  align-self: flex-end;
+}
+
+.instagram {
+  background: linear-gradient(174.12deg, #2856EB 5.61%, #BC1888 22.32%, #CC2366 36.16%, #DC2743 51.91%, #E6683C 73.38%, #F09433 92.99%);
+  border-radius: 50%;
+}
+/* ---- black END ---- */
+/* ---------------------------------------------- */
